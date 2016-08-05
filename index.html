@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>The Site Builder's Guide to Project Management - DrupalCorn Camp 2015</title>
+		<title>Bower Gulp your Node Sass - DrupalCorn Camp 2016</title>
 
 		<meta name="description" content="A guide to project management for site builders, developers, and themers with little to no project management training">
 		<meta name="author" content="Genevieve Johnson">
@@ -58,6 +58,7 @@
               <h1>Bower Gulp your Node Sass</h1>
               <h5><em>A practical guide to front end development tools</em></h5>
               <small>DrupalCorn Camp 2016</small>
+              <p class="small">https://github.com/adamdelaney/drupalcorn_2016_presentation</p>
           </section>
 
           <section>
@@ -69,17 +70,17 @@
 
 
           <section>
-            <h2>In the begining there was</h2>
+            <h3>In the begining there was</h3>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
               <li>JS</li>
             </ul>
-            <p>... and it was good</p>
+            <h3>... and it was good</h3>
           </section>
 
           <section>
-            <h2>The web is currently more complex than ever before</h2>
+            <h3>The web is currently more complex than ever before</h3>
             <ul class="small">
               <li>Javascript Libraries</li>
               <li>Front-end Frameworks</li>
@@ -95,7 +96,7 @@
               <li>Development Environments</li>
               <li>Collaboration and Project Management Tools</li>
             </ul>
-            <p>Kind of makes you feel like...</p>
+            <h3>Kind of makes you feel like...</h3>
           </section>
 
           <section>
@@ -104,23 +105,200 @@
           </section>
 
           <section>
-            <h3>Todays focus:</h3>
-
+            <h3 class="seperator">Why do we frontend tools?</h3>
+            <ul>
+              <li>Coordinates and ensures consistency between different enviornments.</li>
+              <li>Coordinates and ensures consistency between developers.</li>
+              <li>Provides a way to keep track of projects and their versions</li>
+              <li>Provides ways of managing those projects and their dependiences</li>
+              <li>Provides the ability to automate tasks.</li>
+            </ul>
           </section>
 
+          <section>
+            <h3>So what are we doing today...</h3>
+            <p>Building an omelet</p>
+            <img src="lib/image/dc16/omelet.jpg" width="70%" />
+          </section>
 
-          <section class="stack">
+          <section>
             <section>
-              <h2>Communicate and adapt</h2>
+              <div class="seperator">
+                <h2 class="inline">Node.js</h2>
+                <p class="inline small"> - The kitchen supply store</p>
+              </div>
+              <img src="lib/image/dc16/kitchen-supply.jpg" width="60%" />
+            </section>
+
+            <section>
+              <h6>Node.js continued...</h6>
+              <h2 class="seperator">What is node.js?</h2>
               <ul>
-                <li>Check in often and briefly</li>
-                <li>Reflect on processes</li>
+                <li>Open Source and cross development platform</li>
+                <li>Built on Google's V8 javascript engine (fast)</li>
+                <li>Runs Servicer side</li>
+                <li><a>https://nodejs.org/en/</a></li>
               </ul>
             </section>
 
             <section>
-              <h2>Celebrate  your successes!</h2>
-              <p style="text-align: right;">&#9632;</p>
+              <h6>Node.js continued...</h6>
+              <h2 class="seperator">2 Installation Methods</h2>
+              <ol>
+                <li>
+                  <h4>Download and install the package</h4>
+                  <ul>
+                    <li><a>https://nodejs.org/en/<a></li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Use nvm to install</h4>
+                  <ul>
+                    <li>Used to manage mulitple node environments</li>
+                    <li class="small"><a>https://github.com/creationix/nvm/blob/master/README.markdown</a></li>
+                  </ul>
+                </li>
+              </ol>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">npm</h2>
+                <p class="inline small"> - A trip to the kitchen supply store</p>
+              </div>
+              <img src="lib/image/dc16/car-trip.jpg" width="60%" />
+            </section>
+
+            <section>
+              <h6>npm continued...</h6>
+              <h2 class="seperator">What is npm?</h2>
+              <ul class="small">
+                <li>Package manager for node.js</li>
+                <li>Included with node.js</li>
+                <li>Packages can be installed globally by passing the --global flag and installs packages in your configured path for global node module
+                  <ul>
+                    <li>
+                      <pre>npm install {project} –-global</pre>
+                    </li>
+                  </ul>
+                </li>
+                <li>Packages can be installed locally and creates a node_modules
+                  <ul>
+                    <li>
+                      <pre>npm install {project}</pre>
+                    </li>
+                  </ul>
+                </li>
+                <li><a>https://docs.npmjs.com/</a></li>
+              </ul>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">package.json</h2>
+                <p class="inline small"> - A shopping list for the kitchen supply store</p>
+              </div>
+              <img src="lib/image/dc16/shopping-list.jpg" width="60%" />
+            </section>
+
+            <section>
+              <h6>package.json continued...</h6>
+              <h2 class="seperator">What is package.json?</h2>
+              <ul class="small">
+                <li>A list of node.js modules to be installed</li>
+                <li>Thousands of node.js modules for all kinds of things like, Sass, CSS and JS linting, CSS and JS optimization, Image optimization, CSS auto prefixing, and much more</li>
+                <li>When npm runs it will install the package as well as any dependencies the package may have</li>
+                <li>Creates a node_modules folder with all of the projects</li>
+                <li>Uses semantic versioning: <a>https://docs.npmjs.com/misc/semver</a></li>
+                <li>Different dependency types: dependencies, devDependencies, bundleDependencies
+                  <ul>
+                    <li>Dependencies: required to run your application </li>
+                    <li>DevDependencies: only required develop your application</li>
+                  </ul>
+                </li>
+                <li class="tip">TIP: once your packages have downloaded, add node_modules to your .gitignore. If you plan on using a package in your production environment you should copy the assets you need out to another location. We can automate this using gulp.js</li>
+                <li><a>https://docs.npmjs.com/files/package.json</a></li>
+              </ul>
+            </section>
+
+            <section>
+              <h6>package.json continued...</h6>
+              <h2 class="seperator">Getting your node.js packages</h2>
+              <img src="lib/image/dc16/truck-trip.jpg" width="30%" />
+              <pre>npm install</pre>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">npm shrinkwrap</h2>
+                <p class="inline small"> - Locking things down.</p>
+              </div>
+              <img src="lib/image/dc16/lock.jpg" width="30%" />
+            </section>
+
+            <section>
+              <h6>npm shrinkwrap continued...</h6>
+              <h2 class="seperator">What is npm shrinkwrap?</h2>
+              <ul>
+                <li>Creates a locked file of node projects and their dependencies for the exact versions you are using</li>
+                <li>Ships with node.js</li>
+                <li>Creates a npm-shrinkwrap.json file</li>
+                <li class="tip">Use –dev to include devDependencies</li>
+              </ul>
+              <pre>npm shrinkwrap</pre>
+            </section>
+          </section>
+
+          <section>
+              <h2 class="seperator">So where's my omelet?</h2>
+              <p>To review, we have
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">Bower</h2>
+                <p class="inline small"> - The grocery store</p>
+              </div>
+              <img src="lib/image/dc16/" width="60%" />
+            </section>
+
+            <section>
+              <h6>Bower continued...</h6>
+              <h2 class="seperator">What is Bower?</h2>
+              <ul>
+                <li></li>
+              </ul>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">bower.json</h2>
+                <p class="inline small"> - A shopping list of ingrdients</p>
+              </div>
+              <img src="lib/image/dc16/" width="60%" />
+            </section>
+
+            <section>
+              <h6>bower.json continued...</h6>
+              <h2 class="seperator">What is Bower?</h2>
+              <ul class="small">
+                <li>A list of bower componets to be installed</li>
+                <li>A list of bower componets must have an endpoint</li>
+                <li>When bower install runs it will download the packages and place it in a bower_components folder</li>
+                <li>Uses semantic versioning: <a>https://docs.npmjs.com/misc/semver</a></li>
+                <li class="tip">TIP: once your packages have downloaded, add bower_componets to your .gitignore. If you plan on using a assets in your production environment you should copy them to another location. We can automate this using gulp.js</li>
+                <li><a>PUT DOC HERE</a></li>
+              </ul>
             </section>
           </section>
 
@@ -128,33 +306,16 @@
 
 
           <section>
-            <h2>Meetings</h2>
-            <ul>
-              <li>send agenda in advance</li>
-              <li>limit attendees</li>
-              <li>cover immediate blockers</li>
-              <li>follow up with a summary and next steps</li>
-            </ul>
+              <h1>Thank you</h1>
+              <ul>
+                <li>Drupalcorn attendees, sponsors and planners</li>
+                <li>Drupal community</li>
+                <li>My team of developers: Brandon Neil, Johnson, Genevieve Johnson, Joe Whitsitt, Rick Porter, Brian Dickey and Mark Ahrens</li>
+              </ul>
           </section>
-
-
-
 
           <section>
               <h1>Questions</h1>
-          </section>
-
-          <section>
-              <h1>Sprint</h1>
-              <h2>Sunday 9am - 5pm</h2>
-              <h3>ITTC Lounge (on the first floor of ITTC behind rooms 134 &amp; 136)</h3>
-              <h2>Learn through contribution</h2>
-              <h3>Contributors of all skill sets and levels are welcome and encouraged.</h3>
-          </section>
-
-          <section>
-              <h1>Feedback</h1>
-              <p><a href="http://2015.drupalcorn.org/evaluation">http://2015.drupalcorn.org/evaluation</a></p>
           </section>
 
 			</div>

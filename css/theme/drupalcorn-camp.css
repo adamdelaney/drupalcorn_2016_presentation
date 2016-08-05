@@ -68,7 +68,8 @@ body {
   font-size: 2em; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+}
 
 .reveal h3 {
   font-size: 1.3em; }
@@ -94,6 +95,32 @@ body {
 
 .reveal .small {
   font-size: 60%;
+}
+
+.reveal .inline {
+  display: inline;
+}
+
+.reveal pre {
+  background: #333;
+  padding: 0.3em;
+}
+
+.reveal li {
+  margin-bottom: 0.2em;
+}
+
+.reveal .seperator {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.reveal .tip {
+  background: rgba(255,255,255,0.1);
+  padding: 0.3em;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 80%;
 }
 
 

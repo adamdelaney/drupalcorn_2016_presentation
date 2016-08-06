@@ -105,12 +105,12 @@
           </section>
 
           <section>
-            <h3 class="seperator">Why do we frontend tools?</h3>
+            <h3 class="seperator">Why do we need frontend tools?</h3>
             <ul>
               <li>Coordinates and ensures consistency between different enviornments.</li>
               <li>Coordinates and ensures consistency between developers.</li>
               <li>Provides a way to keep track of projects and their versions</li>
-              <li>Provides ways of managing those projects and their dependiences</li>
+              <li>Provides ways of managing those projects and their dependencies</li>
               <li>Provides the ability to automate tasks.</li>
             </ul>
           </section>
@@ -137,7 +137,7 @@
                 <li>Open Source and cross development platform</li>
                 <li>Built on Google's V8 javascript engine (fast)</li>
                 <li>Runs Servicer side</li>
-                <li><a>https://nodejs.org/en/</a></li>
+                <li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
               </ul>
             </section>
 
@@ -148,14 +148,14 @@
                 <li>
                   <h4>Download and install the package</h4>
                   <ul>
-                    <li><a>https://nodejs.org/en/<a></li>
+                    <li><a href="https://nodejs.org/en/">https://nodejs.org/en/<a></li>
                   </ul>
                 </li>
                 <li>
                   <h4>Use nvm to install</h4>
                   <ul>
                     <li>Used to manage mulitple node environments</li>
-                    <li class="small"><a>https://github.com/creationix/nvm/blob/master/README.markdown</a></li>
+                    <li class="small"><a href="https://github.com/creationix/nvm/blob/master/README.markdown">https://github.com/creationix/nvm/blob/master/README.markdown</a></li>
                   </ul>
                 </li>
               </ol>
@@ -191,7 +191,7 @@
                     </li>
                   </ul>
                 </li>
-                <li><a>https://docs.npmjs.com/</a></li>
+                <li><a href="https://docs.npmjs.com/">https://docs.npmjs.com/</a></li>
               </ul>
             </section>
           </section>
@@ -211,18 +211,54 @@
               <ul class="small">
                 <li>A list of node.js modules to be installed</li>
                 <li>Thousands of node.js modules for all kinds of things like, Sass, CSS and JS linting, CSS and JS optimization, Image optimization, CSS auto prefixing, and much more</li>
-                <li>When npm runs it will install the package as well as any dependencies the package may have</li>
-                <li>Creates a node_modules folder with all of the projects</li>
-                <li>Uses semantic versioning: <a>https://docs.npmjs.com/misc/semver</a></li>
+                <li>When npm runs it will install the modules as well as any dependencies it may have</li>
+                <li>Creates a node_modules folder with all of the modules and dependenceis</li>
+                <li>Uses semantic versioning: <a href="https://docs.npmjs.com/misc/semver">https://docs.npmjs.com/misc/semver</a></li>
                 <li>Different dependency types: dependencies, devDependencies, bundleDependencies
                   <ul>
                     <li>Dependencies: required to run your application </li>
                     <li>DevDependencies: only required develop your application</li>
                   </ul>
                 </li>
-                <li class="tip">TIP: once your packages have downloaded, add node_modules to your .gitignore. If you plan on using a package in your production environment you should copy the assets you need out to another location. We can automate this using gulp.js</li>
-                <li><a>https://docs.npmjs.com/files/package.json</a></li>
+                <li class="tip">TIP: once your modules have downloaded, add node_modules to your .gitignore.</li>
+                <li><a href="ttps://docs.npmjs.com/files/package.json">https://docs.npmjs.com/files/package.json</a></li>
               </ul>
+            </section>
+
+            <section>
+              <h6>package.json continued...</h6>
+              <h2 class="seperator">Example of a package.json file.</h2>
+              <pre>
+                {
+                  "name": "subtheme_radix",
+                  "description": "A theme based on Radix.",
+                  "private": true,
+                  "scripts": {
+                    "setup": "npm install && bower install",
+                    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+                  },
+                  "devDependencies": {
+                    "imagemin-pngcrush": "~4.1.0",
+                    "node-sass": "^3.4.1",
+                    "gulp": "~3.9.0",
+                    "gulp-autoprefixer": "^3.1.0",
+                    "gulp-concat": "^2.6.0",
+                    "gulp-imagemin": "~2.2.1",
+                    "gulp-notify": "^2.2.0",
+                    "gulp-plumber": "~1.0.1",
+                    "gulp-rename": "^1.2.2",
+                    "gulp-sass": "~2.0.1",
+                    "gulp-sass-glob": "0.0.2",
+                    "gulp-shell": "~0.4.1",
+                    "gulp-sourcemaps": "^1.6.0",
+                    "gulp-shrinkwrap": "^2.0.0",
+                    "gulp-uglify": "^1.5.1",
+                    "gulp-scss-lint": "~0.3.9",
+                    "jshint": "~2.9.1",
+                    "gulp-jshint": "~2.0.0"
+                  }
+                }
+              </pre>
             </section>
 
             <section>
@@ -246,18 +282,30 @@
               <h6>npm shrinkwrap continued...</h6>
               <h2 class="seperator">What is npm shrinkwrap?</h2>
               <ul>
-                <li>Creates a locked file of node projects and their dependencies for the exact versions you are using</li>
+                <li>Creates a locked file of node modules and their dependencies for the exact versions you are using</li>
                 <li>Ships with node.js</li>
                 <li>Creates a npm-shrinkwrap.json file</li>
-                <li class="tip">Use –dev to include devDependencies</li>
+                <li class="tip">Use –dev flag to include devDependencies</li>
               </ul>
               <pre>npm shrinkwrap</pre>
             </section>
           </section>
 
           <section>
-              <h2 class="seperator">So where's my omelet?</h2>
-              <p>To review, we have
+              <h2 class="seperator">I'm hungry, where's my omelet?</h2>
+              <div class="small">
+                <p>To review, we have installed node.js.</p>
+                <p>We have decided what tools we will need to create our omelet in our package.json file:</p>
+                <img src="lib/image/dc16/kitchen-tools.jpg" width="12%" />
+                <ul>
+                  <li>Frying pan -> node-sass</li>
+                  <li>Spatula -> gulp-autoprefixer</li>
+                  <li>Wisk -> sass-glob</li>
+                  <li>and more...</li>
+                </ul>
+                <p>We have ran npm install, to get all of our tools.</p>
+                <p>We have ran shinkwrap to lock down exactly what tools we are using, i.e. Our fying pan is a Gotham Steel 9.5-in. Nonstick Titanium and Ceramic Frypan by Daniel Green, Brown. This created our npm-shrinkwrap.json file. </p>
+              </div>
             </section>
           </section>
 
@@ -267,14 +315,18 @@
                 <h2 class="inline">Bower</h2>
                 <p class="inline small"> - The grocery store</p>
               </div>
-              <img src="lib/image/dc16/" width="60%" />
+              <img src="lib/image/dc16/grocery-store.jpg" width="60%" />
             </section>
 
             <section>
               <h6>Bower continued...</h6>
               <h2 class="seperator">What is Bower?</h2>
               <ul>
-                <li></li>
+                <li>It is a node.js module</li>
+                <li>Package manager for components that contain HTML, CSS, JavaScript, fonts or image files.</li>
+                <li>Downloads and installs packages from a variety of types of endpoints</li>
+                <li>Bower can be installed by running<pre>npm install bower –-global</pre></li>
+                <li><a href="https://bower.io/">https://bower.io/</a>
               </ul>
             </section>
           </section>
@@ -285,32 +337,321 @@
                 <h2 class="inline">bower.json</h2>
                 <p class="inline small"> - A shopping list of ingrdients</p>
               </div>
-              <img src="lib/image/dc16/" width="60%" />
+              <img src="lib/image/dc16/shopping-list.jpg" width="60%" />
             </section>
 
             <section>
               <h6>bower.json continued...</h6>
-              <h2 class="seperator">What is Bower?</h2>
-              <ul class="small">
-                <li>A list of bower componets to be installed</li>
-                <li>A list of bower componets must have an endpoint</li>
-                <li>When bower install runs it will download the packages and place it in a bower_components folder</li>
-                <li>Uses semantic versioning: <a>https://docs.npmjs.com/misc/semver</a></li>
-                <li class="tip">TIP: once your packages have downloaded, add bower_componets to your .gitignore. If you plan on using a assets in your production environment you should copy them to another location. We can automate this using gulp.js</li>
-                <li><a>PUT DOC HERE</a></li>
+              <h2 class="seperator">What should I get at the store?</h2>
+              <p>Everyone likes their omelet different.<br/>Here are some suggestions:</p>
+              <ul>
+                <li>Frameworks: Bootstrap, Foundation</li>
+                <li>JS libraries: jquery, waypoints, animate</li>
+                <li>Fonts: font awesome, iconic</li>
+                <li>Plus many more</li>
               </ul>
+            </section>
+
+            <section>
+              <h6>bower.json continued...</h6>
+              <h2 class="seperator">Example of a bower.json file.</h2>
+              <pre>
+                {
+                  "name": "subtheme_radix",
+                  "description": "A theme based on Radix.",
+                  "private": true,
+                  "ignore": [
+                    "**/.*",
+                    "bower_components",
+                    "includes",
+                    "kits",
+                    "node_modules",
+                    "templates",
+                    "*.json",
+                    "*.js",
+                    "*.png",
+                    "*.inc",
+                    "*.info",
+                    "*.md",
+                    "*.php"
+                  ],
+                  "dependencies": {
+                    "bootstrap-sass": "~3.3.6",
+                    "font-awesome": "fontawesome#~4.6.3",
+                    "waypoints": "~4.0.0"
+                  }
+                }
+              </pre>
+            </section>
+
+            <section>
+              <h6>bower.json continued...</h6>
+              <h2 class="seperator">Getting your Bower components</h2>
+              <img src="lib/image/dc16/omelet-ing.jpeg" width="60%" />
+              <pre>bower install</pre>
             </section>
           </section>
 
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">Gulp.js</h2>
+                <p class="inline small"> - Get ready to start cooking.</p>
+              </div>
+              <img src="lib/image/dc16/cooking.jpg" width="60%" />
+            </section>
 
+            <section>
+              <h6>gulp.js continued...</h6>
+              <h2 class="seperator">What is Gulp.js?</h2>
+              <ul>
+                <li>Task automation tool</li>
+                <li>Very simple API</li>
+                <li>Automates tasks such as sass compiling, image optimztion, linting and more</li>
+                <li><a href="http://gulpjs.com/">http://gulpjs.com/</a>
+              </ul>
+            </section>
 
+            <section>
+              <h6>gulp.js continued...</h6>
+              <h2 class="seperator">Gulp.js API</h2>
+              <ul>
+                <li>gulp.src: Source of the assets you want to work with</li>
+                <li>gulp.dest: file creation/location of files to create</li>
+                <li>gulp.task: Operations you want to perform</li>
+                <li>gulp.watch: Folders you would like to watch for file changes</li>
+                <li>.pipe: Allows you to chain along differnt tasks</li>
+                <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md">https://github.com/gulpjs/gulp/blob/master/docs/API.md</a></li>
+              </ul>
+            </section>
+
+            <section>
+              <h6>gulp.json continued...</h6>
+              <h2 class="seperator">config.json</h2>
+              <ul>
+                <li>json file that tpically contains file names, source and destination paths as well as includePaths</li>
+                <li>May contain variables or anything else you may want to access from your gulp tasks</li>
+              </ul>
+            </section>
+
+            <section>
+              <h6>gulp.json continued...</h6>
+              <h2 class="seperator">Example of a config.json file.</h2>
+              <pre>
+                {
+                  "name": "subtheme_radix",
+                  "description": "A theme based on Radix.",
+                  "bowerDir": "./bower_components",
+                  "css": {
+                    "file" : "subtheme_radix.style.scss",
+                    "src": [
+                      "scss/**/*.scss"
+                    ],
+                    "dest": "assets/css",
+                    "includePaths": [
+                      "./bower_components/bootstrap-sass/assets/stylesheets",
+                      "./bower_components/font-awesome/scss"
+                    ]
+                  },
+                  "js": {
+                    "file" : "subtheme_radix.script.js",
+                    "src": [
+                      "assets/js/**/*.js"
+                    ],
+                    "dest": "assets/js"
+                  },
+                  "images": {
+                    "src": [
+                      "assets/images/**/*"
+                    ],
+                    "dest": "assets/images/"
+                  },
+                  "fonts": {
+                    "src": [
+                      "./bower_components/font-awesome/fonts/**.*"
+                    ],
+                    "dest": "./assets/fonts/"
+                  }
+                }
+              </pre>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <div class="seperator">
+                <h2 class="inline">gulpfile.js</h2>
+                <p class="inline small"> - Your sous-chef.</p>
+              </div>
+              <img src="lib/image/dc16/sous-chef.jpg" width="60%" />
+            </section>
+
+            <section>
+              <h6>gulpfile.js continued...</h6>
+              <h2 class="seperator">What is gulpfile.js?</h2>
+              <ul>
+                <li>File that contains the automation tasks to be ran</li>
+                <li>Define workflow steps using the gulp.js API</li>
+                <li>Build tasks to perform a multitude of action steps</li>
+              </ul>
+            </section>
+
+            <section>
+              <h6>gulpfile.js continued...</h6>
+              <h2 class="seperator">Example of a gulp.js file.</h2>
+              <pre>
+                // Include gulp.
+                var gulp = require('gulp');
+                var config = require('./config.json');
+
+                // Include plugins.
+                var shrinkwrap = require('gulp-shrinkwrap');
+                var sass = require('gulp-sass');
+                var imagemin = require('gulp-imagemin');
+                var pngcrush = require('imagemin-pngcrush');
+                var shell = require('gulp-shell');
+                var plumber = require('gulp-plumber');
+                var notify = require('gulp-notify');
+                var autoprefixer = require('gulp-autoprefixer');
+                var glob = require('gulp-sass-glob');
+                var uglify = require('gulp-uglify');
+                var concat = require('gulp-concat');
+                var rename = require('gulp-rename');
+                var sourcemaps = require('gulp-sourcemaps');
+
+                // CSS.
+                gulp.task('css', function() {
+                  return gulp.src(config.css.src)
+                    .pipe(glob())
+                    .pipe(plumber({
+                      errorHandler: function (error) {
+                        notify.onError({
+                          title:    "Gulp",
+                          subtitle: "Failure!",
+                          message:  "Error: <%= error.message %>",
+                          sound:    "Beep"
+                        }) (error);
+                        this.emit('end');
+                      }}))
+                    .pipe(sourcemaps.init())
+                    .pipe(sass({
+                      style: 'compressed',
+                      errLogToConsole: true,
+                      includePaths: config.css.includePaths
+                    }))
+                    .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 9', 'ie 10']))
+                    .pipe(sourcemaps.write('./'))
+                    .pipe(gulp.dest(config.css.dest));
+                });
+
+                // Shrinkwrap
+                gulp.task('shrinkwrap', function () {
+                  return gulp.src('package.json')
+                    .pipe(shrinkwrap({dev: true}))                               // just like running `npm shrinkwrap`
+                    .pipe(gulp.dest('./'));
+                });
+
+                // Waypoints.
+                gulp.task('copywaypoints', function() {
+                   gulp.src('./bower_components/waypoints/lib/jquery.waypoints.js')
+                   .pipe(gulp.dest('./assets/js/waypoints'));
+                });
+
+                // JS
+                gulp.task('js', function() {
+                  return gulp.src(config.js.src)
+                    .pipe(sourcemaps.init())
+                    .pipe(concat(config.js.file))
+                    .pipe(plumber({
+                      errorHandler: function (error) {
+                        notify.onError({
+                          title:    "JS",
+                          subtitle: "Failure!",
+                          message:  "Error: <%= error.message %>",
+                          sound:    "Beep"
+                        }) (error);
+                        this.emit('end');
+                      }}))
+                    .pipe(uglify())
+                    .pipe(sourcemaps.write('./'))
+                    .pipe(gulp.dest(config.js.dest));
+                });
+
+                // Compress images.
+                gulp.task('images', function () {
+                  return gulp.src(config.images.src)
+                    .pipe(imagemin({
+                      progressive: true,
+                      svgoPlugins: [{ removeViewBox: false }],
+                      use: [pngcrush()]
+                    }))
+                    .pipe(gulp.dest(config.images.dest));
+                });
+
+                // Fonts.
+                gulp.task('fonts', function() {
+                  return gulp.src(config.fonts.src)
+                    .pipe(gulp.dest(config.fonts.dest));
+                });
+
+                // Static Server + Watch
+                gulp.task('serve', ['css', 'js', 'fonts', 'copywaypoints', 'shrinkwrap'], function() {
+                  gulp.watch(config.js.src, ['js']);
+                  gulp.watch(config.css.src, ['css']);
+                  gulp.watch(config.images.src, ['images']);
+                });
+
+                // Run drush to clear the theme registry.
+                gulp.task('drush', shell.task([
+                  'drush cache-clear theme-registry'
+                ]));
+
+                // Default Task
+                gulp.task('default', ['serve']);
+              </pre>
+            </section>
+
+            <section>
+              <h6>gulpfile.js continued...</h6>
+              <h2 class="seperator">Lets make your omelet</h2>
+              <img src="lib/image/dc16/omelet.jpg" width="60%" />
+              <pre>gulp</pre>
+            </section>
+          </section>
+
+          <section>
+            <h2 class="seperator">Quick review</h2>
+            <ol>
+              <li>Installed node.js</li>
+              <li>Made our list of kitchen hardware: package.json</li>
+              <li>Picked up our kitchen hardware: npm install</li>
+              <li>Documented exactly what hardware we used: npm shrinkwrap --dev</li>
+              <li>Made our list of omelet ingredients: bower.json</li>
+              <li>Defined a list useful list of gulp variables: config.json</li>
+              <li>Created a recipe: gulpfile.js</li>
+              <li>Made our delicious omelet: gulp</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="seperator">Pro Tips</h2>
+            <ul>
+              <li>Steal: use other peoples projects as a starting point</li>
+              <li>Contrib: give back to the community</li>
+                <ul>
+                  <li>File issues</li>
+                  <li>Crate modules, packages or code repos</li>
+                </ul>
+              <li><a href="https://github.com/ITS-UofIowa/Radix-Starter-Kit">https://github.com/ITS-UofIowa/Radix-Starter-Kit</a></li>
+            </ul>
+          </section>
 
           <section>
               <h1>Thank you</h1>
               <ul>
                 <li>Drupalcorn attendees, sponsors and planners</li>
                 <li>Drupal community</li>
-                <li>My team of developers: Brandon Neil, Johnson, Genevieve Johnson, Joe Whitsitt, Rick Porter, Brian Dickey and Mark Ahrens</li>
+                <li>My team of developers: Brandon Neil, Johnson, Genevieve Johnson, Joe Whitsitt, Rick Porter, Brian Dickey, Mark Ahrens and Romy Bolton</li>
               </ul>
           </section>
 

@@ -123,6 +123,12 @@ body {
   font-size: 80%;
 }
 
+.reveal pre {
+  max-height: 50vh;
+  overflow: auto;
+  text-align: left;
+}
+
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img, .reveal video, .reveal iframe {
